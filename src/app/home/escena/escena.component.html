@@ -1,0 +1,40 @@
+<section  class="pt-5 bg-light">
+  <div class="container px-4 px-lg-5 mt-5 ">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+@for(step of steps; track step.id){
+				<div class="col mb-5">
+					<div class="card h-100 bg-white shadow border-0">
+						<img class="card-img-top " [src]="step.imagen" alt="..." />
+						<div class="card-body p-4">
+							<div class="text-start">
+								<h3 class="fw-bolder">{{ step.title }}</h3>
+								<p>{{ step.descripcion }}</p>
+							</div>
+						</div>
+						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              @if(step.id === 1){
+                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
+                <button type="button" class="btn btn-primary mx-1" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
+                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle  fa-2xs circulo"></i></button>  
+                <button type="button" class="btn btn-primary flecha" (click)="incrementar()"><i class="fa-solid fa-circle-right fa-2xl derecha"></i></button>
+              }
+              @else if(step.id === 2){ 
+                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
+                <button type="button" class="btn btn-primary mx-1" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
+                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle  fa-2xs circulo"></i></button> 
+                <button type="button" class="btn btn-primary" (click)="decrementar()"><i class="fa-solid fa-circle-left fa-2xl izquierda"></i></button>
+                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle-right fa-2xl derecha"></i></button>
+              }
+              @else if(step.id === 3){ 
+                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
+                <button type="button" class="btn btn-primary mx-1" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
+                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle  fa-2xs circulo"></i></button> 
+                <button type="button" class="btn btn-primary" (click)="decrementar()"><i class="fa-solid fa-circle-left fa-2xl izquierda"></i></button>
+              }
+            </div>
+          </div>
+        </div>
+    }
+</div>
+</div>
+</section>

@@ -1,0 +1,23 @@
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+}
+
+.derecha {
+  color: black;
+}
+
+.izquierda {
+  color: black;
+}
+
+.circulo {
+  color: black;
+}/*# sourceMappingURL=escena.component.css.map */
