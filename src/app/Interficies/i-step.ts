@@ -4,6 +4,6 @@ id : number;
 title : string;
 descripcion : string;
 imagen : string;
-bgcolor: number;
+bgcolor: `#${string}`; // template union type
 }
 
