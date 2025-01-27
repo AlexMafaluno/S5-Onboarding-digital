@@ -1,3 +1,7 @@
+.fondo{
+  background-color: #bdc3c7;
+  }
+
 .targeta {  
     border-radius: 10px; /* Puedes ajustar según el diseño */
     display: flex;
@@ -41,14 +45,19 @@ button {
 button:disabled {
     display: none;
   }
-
-.derecha, .izquierda, .circulo {
+.circulo {
+    color: gray; /* Color por defecto */
+  }
+.active .circulo {
+    color: black; /* Color cuando está activo */
+  }
+.derecha, .izquierda{
     
     color: black;
     transition: color 0.3s ease;
 }
 .derecha:hover, .izquierda:hover, .circulo:hover {
-    color: whitesmoke;
+    color: lightgray;
     background-color: transparent;
     border-color: transparent;
   }

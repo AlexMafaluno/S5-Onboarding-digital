@@ -1,23 +1,50 @@
-import { Component, inject, Input, NgModule, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IStep } from '../../Interficies/i-step';
-import { StepsService } from '../../Services/steps.service';
 import { CommonModule } from '@angular/common';
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
 
+function createAnimation(direction: 'left' | 'right') {
+  const enterTransform = direction === 'left' ? 'translateX(-20%)' : 'translateX(20%)';
+  const leaveTransform = direction === 'left' ? 'translateX(20%)' : 'translateX(-20%)';
+
+  return [
+    query(':enter, :leave', 
+    style({ position: 'fixed', width: '100%' }), 
+    { optional: true }),
+    group([
+      query(':enter', 
+      [style({ transform: enterTransform ,opacity: 0.5 }), 
+      animate('.3s ease-out', style({ transform: 'translateX(0%)',opacity: 1 }))], {
+      optional: true,
+      }),
+      query(':leave', 
+      [style({ transform: 'translateX(0%)',opacity: 1}), 
+      animate('.3s ease-out', 
+      style({ transform: leaveTransform ,opacity: 0.5 }))], {
+      optional: true,
+      }),
+    ]),
+  ];
+}
+
+const left =  createAnimation('left');
+const right =  createAnimation('right');
+
+/*
 const left = [
   query(':enter, :leave', 
   style({ position: 'fixed', width: '100%' }), 
   { optional: true }),
   group([
     query(':enter', 
-    [style({ transform: 'translateX(-100%)',backgroundColor: '*' }), 
-    animate('.3s ease-out', style({ transform: 'translateX(0%)',backgroundColor: '*' }))], {
+    [style({ transform: 'translateX(-20%)',opacity: 0.5 }), 
+    animate('.3s ease-out', style({ transform: 'translateX(0%)',opacity: 1 }))], {
     optional: true,
     }),
     query(':leave', 
-    [style({ transform: 'translateX(0%)',backgroundColor: '*'}), 
+    [style({ transform: 'translateX(0%)',opacity: 1}), 
     animate('.3s ease-out', 
-    style({ transform: 'translateX(100%)',backgroundColor: '*' }))], {
+    style({ transform: 'translateX(20%)',opacity: 0.5 }))], {
     optional: true,
     }),
   ]),
@@ -29,19 +56,19 @@ const right = [
    { optional: true }),
   group([
     query(':enter', 
-      [style({ transform: 'translateX(100%)', backgroundColor: '*' }),
-      animate('.3s ease-out', style({ transform: 'translateX(0%)', backgroundColor: '*' }))], {
+      [style({ transform: 'translateX(20%)',opacity: 0  }),
+      animate('.3s ease-out', style({ transform: 'translateX(0%)',opacity: 1 }))], {
       optional: true,
     }),
     query(':leave',
-      [style({ transform: 'translateX(0%)', backgroundColor: '*' }), 
+      [style({ transform: 'translateX(0%)', opacity: 1 }), 
       animate('.3s ease-out', 
-        style({ transform: 'translateX(-100%)',backgroundColor: '*' }))], {
+        style({ transform: 'translateX(-20%)',opacity: 0.5 }))], {
       optional: true,
     }),
   ]),
 ];
-
+*/
 
 @Component({
   selector: 'app-escena',

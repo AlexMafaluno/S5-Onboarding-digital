@@ -2,7 +2,7 @@
   <div [@animSlider]="currentStep">
 @for(step of steps; track step.id){
 @if(step.id === currentStep){
-  <div class="col d-flex justify-content-center align-items-center">
+  <div class="col d-flex justify-content-center align-items-center fondo">
   <div class="targeta shadow " style="width: 300px" [ngStyle]="{'background-color': step.bgcolor}">
     <div class= "image-container">
     <img class="card-img-top" [src]="step.imagen" alt="..." />
@@ -16,13 +16,13 @@
     </div>
     <div class="card-footer p-4 pt-0 bg-white">
       <div class="btn-group-left"> 
-      <button type="button" class="btn btn-primary" (click)="incrementar()" [disabled]="currentStep === 1"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
-      <button type="button" class="btn btn-primary mx-1" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
-      <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle  fa-2xs circulo"></i></button> 
+      <button type="button" class="btn" [class.active]="currentStep === 1"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
+      <button type="button" class="btn mx-1" [class.active]="currentStep === 2"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
+      <button type="button" class="btn" [class.active]="currentStep === 3"><i class="fa-solid fa-circle  fa-2xs circulo"></i></button> 
       </div>
       <div class="btn-group-right">        
-      <button type="button" class="btn btn-primary mx-1" (click)="decrementar()" [disabled]="currentStep === 1"><i class="fa-solid fa-circle-left fa-2xl izquierda"></i></button>
-      <button type="button" class="btn btn-primary" (click)="incrementar()" [disabled]="currentStep == this.steps.length"><i class="fa-solid fa-circle-right fa-2xl derecha"></i></button>
+      <button type="button" class="btn mx-1" (click)="decrementar()" [disabled]="currentStep === 1"><i class="fa-solid fa-circle-left fa-2xl izquierda"></i></button>
+      <button type="button" class="btn" (click)="incrementar()" [disabled]="currentStep == this.steps.length"><i class="fa-solid fa-circle-right fa-2xl derecha"></i></button>
       </div>
     </div>
   </div>
@@ -32,34 +32,4 @@
 </div>
 </section>
 
-<!--
-<section>
-  <div class="container px-4 px-lg-5">
-    <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-    @for(step of steps; track step.id){
-          @if(step.id === currentStep){ 
-            <div [@animSlider]="currentStep" class="col mb-5 mt-5">
-              <div class="targeta shadow "[ngStyle]="{'background-color': step.bgcolor}">
-						    <img class="card-img-top" [src]="step.imagen" alt="..." />
-						  <div class="card-body p-4 bg-white">
-							<div class="text-start" >
-								<h3 class="fw-bolder">{{ step.title }}</h3>
-								<p>{{ step.descripcion }}</p>
-							</div>
-						<div class="card-footer p-4 pt-0 bg-white">   
-                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
-                <button type="button" class="btn btn-primary mx-1" (click)="incrementar()"><i class="fa-solid fa-circle fa-2xs circulo"></i></button>  
-                <button type="button" class="btn btn-primary" (click)="incrementar()"><i class="fa-solid fa-circle  fa-2xs circulo"></i></button> 
-                <button type="button" class="btn btn-primary" (click)="decrementar()" [disabled]="this.currentStep === 1"><i class="fa-solid fa-circle-left fa-2xl izquierda"></i></button>
-                <button type="button" class="btn btn-primary" (click)="incrementar()" [disabled]="this.currentStep == this.steps.length"><i class="fa-solid fa-circle-right fa-2xl derecha"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    }
-    }
-  </div>
-</div>
-</section>
--->
 
