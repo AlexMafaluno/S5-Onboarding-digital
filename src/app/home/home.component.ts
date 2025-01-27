@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { StepsService } from '../Services/steps.service';
 import { EscenaComponent } from './escena/escena.component';
 
-
 @Component({
   selector: 'app-home',
   imports:[CommonModule, EscenaComponent],

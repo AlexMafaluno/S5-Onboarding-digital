@@ -1,10 +1,36 @@
-
-section {
-background-color: #bdc3c7;
+.targeta {  
+    border-radius: 10px; /* Puedes ajustar según el diseño */
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Esto asegura que la tarjeta ocupe toda la altura disponible */
+    margin-top: 30px;
+    margin-bottom: 100px;
 }
 
-.targeta {
-    max-height: 600px;
+.image-container {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: 250px; /* Puedes ajustar la altura según el diseño */
+    overflow: hidden; /* Para evitar que la imagen se desborde si es muy grande */
+}
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen ocupe todo el contenedor sin distorsionarse */
+  }
+
+.card-body {
+    flex-grow: 1; /* Evita que crezca más allá de su contenido */
+  flex-shrink: 0; /* Evita que se reduzca más de lo necesario */
+  height: auto;  /* Hace que su altura dependa del contenido */
+  padding: 1rem;
+  background-color: white;
+}
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 button {
     background: none; 
@@ -12,21 +38,19 @@ button {
     padding: 0; 
     cursor: pointer;
 }
-img{
-    width: 100%;
-    height: auto;
-}
+button:disabled {
+    display: none;
+  }
 
-.derecha {
+.derecha, .izquierda, .circulo {
+    
     color: black;
+    transition: color 0.3s ease;
 }
-
-.izquierda {
-    color: black;
-}
-.circulo{
-    color: black;
-}
-
+.derecha:hover, .izquierda:hover, .circulo:hover {
+    color: whitesmoke;
+    background-color: transparent;
+    border-color: transparent;
+  }
 
 
