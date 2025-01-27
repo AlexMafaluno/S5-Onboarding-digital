@@ -1,59 +1,34 @@
-# OnBoarding
+# Sprint 5 OnBoarding
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.1.
+## Introducción
 
-## Development server
+Este proyecto ha sido desarrollado utilizando el framework Angular 19. Se trata de una aplicación diseñada para demostrar la creación y el uso de componentes, interfaces y servicios, así como la comunicación entre componentes mediante el paso de parámetros de padre a hijo. Utilizar directivas de Angular como @For y @If para generar y controlar dinámicamente el contenido HTML. Implementar animaciones nativas de Angular para mejorar la experiencia del usuario. Despliegue de la aplicación utilizando Vercel.
 
-To start a local development server, run:
+## Requisitos previos 
+
+Antes de comenzar, asegúrate de tener instalados los siguientes elementos:
+
+Node.js , comprobar versión *node -v*
+Angular CLI , actualizar versión   *npm install -g @angular/cli@latest*
+Una cuenta en Vercel para el despliegue
+
+
+## Ejecutar servidor
+
+Para Iniciar el servidor de desarrollo, corre:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Una vez que el servidor esté en ejecución, abre tu navegador y navega a http://localhost:4200/. La aplicación se recargará automáticamente cada vez que modifiques cualquiera de los archivos fuente.
 
-## Code scaffolding
+## Instalación y Configuración
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+**Clona el repositorio en tu máquina local**
 
 ```bash
-ng generate --help
-```
+Copiar código
+https://github.com/AlexMafaluno/S5-Onboarding-digital.git
 
-## Building
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
