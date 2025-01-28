@@ -1,4 +1,4 @@
-.fondo{
+section, .container, .fondo, .row{
   background-color: #bdc3c7;
   }
 
@@ -7,13 +7,14 @@
     display: flex;
     flex-direction: column;
     height: auto; /* Esto asegura que la tarjeta ocupe toda la altura disponible */
+    max-width: 100%;
     margin-top: 30px;
     margin-bottom: 100px;
 }
 
 .image-container {
     width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
-    height: 250px; /* Puedes ajustar la altura según el diseño */
+    height: auto; /* Puedes ajustar la altura según el diseño */
     overflow: hidden; /* Para evitar que la imagen se desborde si es muy grande */
 }
 .card-img-top {

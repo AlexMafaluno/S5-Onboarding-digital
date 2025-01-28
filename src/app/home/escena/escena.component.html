@@ -1,9 +1,10 @@
 <section>
-  <div [@animSlider]="currentStep">
+  <div [@animSlider]="currentStep" class="container-fluid">
 @for(step of steps; track step.id){
 @if(step.id === currentStep){
-  <div class="col d-flex justify-content-center align-items-center fondo">
-  <div class="targeta shadow " style="width: 300px" [ngStyle]="{'background-color': step.bgcolor}">
+  <div class="row justify-content-center align-items-center">
+  <div class="col-8 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center align-items-center fondo">
+  <div class="targeta shadow w-100 " [ngStyle]="{'background-color': step.bgcolor}">
     <div class= "image-container">
     <img class="card-img-top" [src]="step.imagen" alt="..." />
     </div>
@@ -27,6 +28,7 @@
     </div>
   </div>
   </div>
+</div>
 }
 }
 </div>
