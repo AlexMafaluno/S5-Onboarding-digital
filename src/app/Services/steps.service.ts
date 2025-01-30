@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IStep } from '../Interficies/i-step';
-// import { StepsService } from '../services/steps.service';
+
 
 
 @Injectable({
@@ -30,8 +30,6 @@ export class StepsService {
     return this.steps;
   }
 
-  constructor() {
-    console.log('StepsService initialized with data:', this.steps);
-  }
+  constructor() {}
 
 }

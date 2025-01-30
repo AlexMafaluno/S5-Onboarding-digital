@@ -30,45 +30,6 @@ function createAnimation(direction: 'left' | 'right') {
 const left =  createAnimation('left');
 const right =  createAnimation('right');
 
-/*
-const left = [
-  query(':enter, :leave', 
-  style({ position: 'fixed', width: '100%' }), 
-  { optional: true }),
-  group([
-    query(':enter', 
-    [style({ transform: 'translateX(-20%)',opacity: 0.5 }), 
-    animate('.3s ease-out', style({ transform: 'translateX(0%)',opacity: 1 }))], {
-    optional: true,
-    }),
-    query(':leave', 
-    [style({ transform: 'translateX(0%)',opacity: 1}), 
-    animate('.3s ease-out', 
-    style({ transform: 'translateX(20%)',opacity: 0.5 }))], {
-    optional: true,
-    }),
-  ]),
-];
-
-const right = [
-  query(':enter, :leave', 
-    style({ position: 'fixed', width: '100%' }),
-   { optional: true }),
-  group([
-    query(':enter', 
-      [style({ transform: 'translateX(20%)',opacity: 0  }),
-      animate('.3s ease-out', style({ transform: 'translateX(0%)',opacity: 1 }))], {
-      optional: true,
-    }),
-    query(':leave',
-      [style({ transform: 'translateX(0%)', opacity: 1 }), 
-      animate('.3s ease-out', 
-        style({ transform: 'translateX(-20%)',opacity: 0.5 }))], {
-      optional: true,
-    }),
-  ]),
-];
-*/
 
 @Component({
   selector: 'app-escena',
@@ -91,10 +52,18 @@ export class EscenaComponent implements OnInit{
 currentStep: number = 1;
 
 ngOnInit() {
-  // Forzar el cambio de currentStep en el inicio para que la animación se dispare desde el principio
+  
   setTimeout(() => {
-    this.currentStep = 1; // Asegura que currentStep tenga un valor para disparar la animación
+    this.currentStep = 1; 
   });
+}
+
+changeDots(_currentStep: number, direction ?: 'up' | 'down'){
+  if (direction === 'up' && this.currentStep < 3) {
+    this.incrementar();
+  } else if (direction === 'down' && this.currentStep > 1) {
+    this.decrementar();
+  }
 }
 
 incrementar() {
@@ -103,15 +72,12 @@ incrementar() {
   }
 }
 
-decrementar() {
-  if(this.currentStep > 0) {
+decrementar(){
+  if(this.currentStep > 1) {
   this.currentStep--;
   }
 }
 
-constructor() {
-  console.log('Hola desde costructor escea:', this.steps)
-  console.log('Step actual', this.currentStep)
-}
+constructor() {}
 
 }
